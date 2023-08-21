@@ -1,0 +1,87 @@
+﻿<Window x:Class="Brighteye_Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        Title="Number Sorting App" Height="450" Width="600">
+    <Grid Background="#F0F0F0">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="myStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+                <TextBlock Text="Number Sorting App" FontSize="24" FontWeight="Bold" Margin="0 0 0 20"/>
+
+                <Button  Content="Clear and Fill Table1" Click="ClearAndFillTable1_Click" Width="200" Height="30" Margin="0 0 0 10">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#007ACC"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#005CA8"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button  Content="Clear, Sort, and Fill Table2" Click="ClearSortAndFillTable2_Click" Width="200" Height="30">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF7E00"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#E56C00"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <DataGrid x:Name="dataGrid" AutoGenerateColumns="True" VerticalAlignment="Center" Margin="20 30 20 0"  Visibility="Hidden"
+          AlternationCount="2"
+          HorizontalGridLinesBrush="LightGray"
+          VerticalGridLinesBrush="LightGray"
+          AlternatingRowBackground="WhiteSmoke"
+          SelectionMode="Single"
+          IsReadOnly="True"
+          ColumnHeaderHeight="30">
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="FontFamily" Value="Segoe UI"/>
+                            <Setter Property="FontSize" Value="12"/>
+                            <Setter Property="Height" Value="30"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="BorderThickness" Value="0 0 0 1"/>
+                            <Setter Property="BorderBrush" Value="LightGray"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="#007ACC"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.RowStyle>
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="FontFamily" Value="Segoe UI"/>
+                            <Setter Property="FontSize" Value="14"/>
+                            <Setter Property="Height" Value="40"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="Background" Value="LightGray"/>
+                            <Setter Property="BorderThickness" Value="0 0 0 1"/>
+                            <Setter Property="BorderBrush" Value="DarkGray"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                </DataGrid>
+            </StackPanel>
+          </ScrollViewer>   
+           <Controls:ProgressRing x:Name="spinner" Foreground="{DynamicResource AccentColorBrush}" Visibility="Hidden"  IsActive="True" />
+       
+    </Grid>
+</Window>
