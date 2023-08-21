@@ -23,7 +23,6 @@ namespace Brighteye_Test
             context = new MyDbContext();
         }
 
-
         private async void ClearAndFillTable1_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -180,8 +179,6 @@ namespace Brighteye_Test
 
             context?.SaveChanges();
         }
-
-
 
         private void ToggleUIElements(bool isEnabled)
         {
