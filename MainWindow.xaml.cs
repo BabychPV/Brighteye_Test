@@ -101,7 +101,6 @@ namespace Brighteye_Test
             }
         }
 
-
         private void ClearTable<TEntity>(DbSet<TEntity> table) where TEntity : class
         {
             table.RemoveRange(table);
